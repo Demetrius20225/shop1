@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин комп'ютерної техніки</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Заголовок -->
+    <header>
+        <div class="header-content">
+            <h1>Магазин Комп'ютерної Техніки</h1>
+            <nav aria-label="Головна навігація">
+                <button onclick="navigate('home')">Головна</button>
+                <button onclick="navigate('catalog')">Каталог</button>
+                <button onclick="navigate('about')">Про нас</button>
+                <button onclick="navigate('contacts')">Контакти</button>
+            </nav>
+            <div class="cart-favorites">
+                <button id="favorites-toggle" onclick="toggleFavorites()" aria-label="Вподобані">❤️</button>
+                <button id="cart-toggle" onclick="toggleCart()" aria-label="Кошик">🛒 <span id="cart-count">0</span></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Поле пошуку -->
+    <section class="search-container">
+        <input type="text" id="search-box" placeholder="Пошук товарів..." oninput="searchProducts()">
+        <div id="search-results" class="search-results-container" aria-label="Результати пошуку"></div>
+    </section>
+
+    <!-- Навігаційні крихти -->
+    <nav id="breadcrumbs" aria-label="Навігаційні крихти"></nav>
+
+    <!-- Контейнер контенту -->
+    <div class="container">
+        <!-- Фільтр зліва -->
+        <aside id="filter" aria-label="Фільтр">
+            <h2>Фільтр</h2>
+            <div id="filter-content"></div>
+        </aside>
+
+        <!-- Основний контент -->
+        <main id="content">
+            <h2>Вітаємо у нашому магазині!</h2>
+            <p>Оберіть категорію або товар для перегляду.</p>
+            <div class="button-group">
+                <button onclick="navigate('catalog')">Перейти до каталогу</button>
+                <button onclick="navigate('about')">Про нас</button>
+                <button onclick="navigate('contacts')">Контакти</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Кошик -->
+    <aside id="cart" aria-label="Кошик">
+        <button id="close-cart" onclick="toggleCart()" aria-label="Закрити кошик">×</button>
+        <h2>Кошик</h2>
+        <ul id="cart-items"></ul>
+        <p>Загальна сума: <span id="cart-total">0</span> грн</p>
+        <div id="cart-footer">
+            <button onclick="checkout()">Оформити замовлення</button>
+            <button onclick="clearCart()">Очистити кошик</button>
+        </div>
+    </aside>
+
+    <!-- Вподобані -->
+    <aside id="favorites" aria-label="Вподобані">
+        <button id="close-favorites" onclick="toggleFavorites()" aria-label="Закрити вподобані">×</button>
+        <h2>Вподобані</h2>
+        <ul id="favorites-items"></ul>
+    </aside>
+
+    <script src="script.js"></script>
+</body>
+</html>

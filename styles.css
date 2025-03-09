@@ -1,0 +1,801 @@
+/* Глобальні стилі */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f7fa;
+    color: #2c3e50;
+    line-height: 1.6;
+}
+
+/* Заголовок */
+header {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    padding: 20px 0;
+    color: white;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+/* Кнопки навігації зверху */
+header nav {
+    display: flex;
+    gap: 15px;
+}
+
+header nav button {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+header nav button:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+header nav button:active {
+    transform: translateY(0);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Кнопка кошика */
+#cart-toggle {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+#cart-toggle:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Поле пошуку */
+.search-container {
+    position: relative;
+    text-align: center;
+    margin: 20px 0;
+}
+
+#search-box {
+    width: 50%;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#search-box:focus {
+    box-shadow: 0px 4px 12px rgba(106, 17, 203, 0.4);
+}
+
+/* Результати пошуку */
+#search-results {
+    width: 50%;
+    margin: 10px auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    display: none;
+}
+
+.search-result-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.search-result-item button {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.search-result-item button:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    transform: translateY(-2px);
+}
+
+/* Контейнер контенту */
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+/* Фільтр зліва */
+#filter {
+    width: 270px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    display: none;
+}
+
+#filter.active {
+    display: block;
+}
+
+.filter-section {
+    margin-bottom: 20px;
+}
+
+.filter-section h3 {
+    font-size: 18px;
+    color: #6a11cb;
+    border-bottom: 2px solid #6a11cb;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.filter-section label {
+    display: block;
+    margin: 5px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-section label:hover {
+    color: #6a11cb;
+    transform: translateX(5px);
+}
+
+/* Основний контент */
+#content {
+    flex: 1;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Стилі для сітки товарів */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Стилі для сторінки товару */
+#content h2 {
+    font-size: 24px;
+    color: #2575fc;
+    margin-bottom: 20px;
+}
+
+#content img {
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+#content p {
+    font-size: 18px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+#content ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+#content ul li {
+    font-size: 16px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+#content button {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin: 10px;
+}
+
+#content button:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+#content button:active {
+    transform: translateY(0);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Стилі для картки товару */
+.product-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Стилі для зображення товару */
+.product-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Стилі для деталей товару */
+.product-details {
+    padding: 15px;
+    text-align: center;
+}
+
+.product-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #2575fc;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.product-title:hover {
+    color: #6a11cb;
+    text-decoration: underline;
+    transform: scale(1.05);
+}
+
+.product-price {
+    font-size: 16px;
+    color: #2c3e50;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Стилі для кнопки "Додати до кошика" */
+.add-to-cart-button {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    margin-top: 10px;
+}
+
+.add-to-cart-button:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    transform: translateY(-2px);
+}
+
+/* Стилі для детального опису товару */
+.product-description {
+    display: none;
+    padding: 15px;
+    text-align: left;
+    background: #f5f7fa;
+    border-top: 1px solid #ddd;
+}
+
+.product-description h4 {
+    font-size: 16px;
+    color: #6a11cb;
+    margin-bottom: 10px;
+}
+
+.product-description ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.product-description ul li {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/* Стилі для кнопки "Додати до вподобаних" */
+.add-to-favorites-button {
+    background: #ff4757;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    margin-top: 10px;
+}
+
+.add-to-favorites-button:hover {
+    background: #ff6b81;
+    transform: translateY(-2px);
+}
+
+/* Кошик */
+#cart {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    background: white;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    display: none;
+}
+
+#cart h2 {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #6a11cb;
+    font-weight: bold;
+}
+
+#cart-items {
+    list-style: none;
+    padding: 0;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+#cart-items li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+}
+
+#cart-items button {
+    background: #ff4757;
+    padding: 6px 10px;
+    font-size: 12px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    margin: 2px;
+}
+
+#cart-items button:hover {
+    background: #ff6b81;
+    transform: scale(1.1);
+}
+
+#cart-total {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff4757;
+    text-align: center;
+}
+
+/* Кнопки в кошику */
+#cart-footer button {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin: 10px;
+}
+
+#cart-footer button:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Стилі для категорій та підкатегорій */
+.category-grid, .subcategory-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Три колонки */
+    gap: 20px;
+    padding: 20px;
+}
+
+.category-card, .subcategory-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    padding: 20px;
+}
+
+.category-card:hover, .subcategory-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.category-card h3, .subcategory-card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #2575fc;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.category-card h3:hover, .subcategory-card h3:hover {
+    color: #6a11cb;
+    transform: scale(1.05);
+}
+
+/* Стилі для текстових елементів, які виконують роль кнопок */
+.category-card h3, .subcategory-card h3 {
+    display: block;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.category-card h3:hover, .subcategory-card h3:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Адаптація для мобільних пристроїв */
+@media (max-width: 768px) {
+    .category-grid, .subcategory-grid {
+        grid-template-columns: repeat(2, 1fr); /* Дві колонки на мобільних пристроях */
+    }
+}
+
+@media (max-width: 480px) {
+    .category-grid, .subcategory-grid {
+        grid-template-columns: 1fr; /* Одна колонка на дуже маленьких екранах */
+    }
+}
+
+/* Стилі для кнопок на головному екрані */
+.button-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.button-group button {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.button-group button:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.button-group button:active {
+    transform: translateY(0);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Стилі для кнопок у каталозі та підкаталогах */
+#content button {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin: 10px;
+}
+
+#content button:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+#content button:active {
+    transform: translateY(0);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Стилі для кнопок у підкаталогах (Комплектуючі) */
+.subcategory-grid button {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin: 10px;
+}
+
+.subcategory-grid button:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.subcategory-grid button:active {
+    transform: translateY(0);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Додайте ці стилі до вашого файлу styles.css */
+.cart-favorites {
+    display: flex;
+    gap: 10px;
+}
+
+/* Стилі для плавного переходу між вкладками */
+#content {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#content.hidden {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none; /* Вимкнути взаємодію з елементом під час анімації */
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.catalog-animation {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+#favorites-toggle {
+    background: linear-gradient(135deg, #ff4757, #ff6b81);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+#favorites-toggle:hover {
+    background: linear-gradient(135deg, #ff6b81, #ff4757);
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+#favorites {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    background: white;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    display: none;
+}
+
+#favorites h2 {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #ff4757;
+    font-weight: bold;
+}
+
+#favorites-items {
+    list-style: none;
+    padding: 0;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+#favorites-items li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+}
+
+#favorites-items img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+#favorites-items button {
+    background: #ff4757;
+    padding: 6px 10px;
+    font-size: 12px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    margin: 2px;
+}
+
+#favorites-items button:hover {
+    background: #ff6b81;
+    transform: scale(1.1);
+}
+
+/* Стилі для кнопок у товарах */
+.product-grid button {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin: 10px;
+}
+
+.product-grid button:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.product-grid button:active {
+    transform: translateY(0);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Адаптація */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    #filter {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    #search-box {
+        width: 80%;
+    }
+
+    #search-results {
+        width: 80%;
+    }
+
+    #cart {
+        width: 90%;
+        right: 5%;
+    }
+
+    /* Зменшення відступів для мобільних пристроїв */
+    header nav {
+        gap: 10px;
+    }
+
+    #content button {
+        margin: 5px;
+    }
+}
